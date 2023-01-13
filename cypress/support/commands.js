@@ -10,7 +10,29 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
+Cypress.Commands.add('login', (email, password) => {
+    cy.contains('Log in').click();
+    if (email) {
+        cy.get('#mail').type(email);
+    }
+    if (password) {
+        cy.get('#pass').type(password);
+    }
+    cy.contains('Submit').click();
+});
+
+Cypress.Commands.add('addBook', (title, author, option) => {
+    cy.get('.p-0 > .btn').click();
+    cy.get('#title').type(title);
+    cy.get('#authors').type(author);
+    cy.get('#favorite').click();
+    if ((option = '1')) {
+        cy.get('form > .ml-2').click();
+    } else {
+        cy.get('form > .btn-dark').click();
+    }
+});
+
 //
 //
 // -- This is a child command --
