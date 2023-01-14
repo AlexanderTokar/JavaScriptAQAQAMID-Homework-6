@@ -9,7 +9,8 @@
         "test:chrome1": "cypress run --headless --browser chrome --e2e ./cypress/e2e/login.cy.js",
         "test:chrome2": "cypress run --headed --browser chrome --e2e --spec ./cypress/e2e/login.cy.js",
         "test:edge1": "cypress run --headless --browser edge --e2e ./cypress/e2e/login.cy.js",
-        "test:edge2": "cypress run --headed --browser edge --e2e --spec ./cypress/e2e/login.cy.js"
+        "test:edge2": "cypress run --headed --browser edge --e2e --spec ./cypress/e2e/login.cy.js",
+        "cypress:open:iphone": "cypress open --config-file=cypress.env.config.js"
     },
     "author": "",
     "license": "ISC",
