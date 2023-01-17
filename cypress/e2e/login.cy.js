@@ -18,11 +18,6 @@ describe('add books', () => {
     });
 
     it('Should add one book successfully ', () => {
-        // cy.viewport(
-        //     Cypress.env('viewportWidth'),
-        //     Cypress.env('viewportHeight'),
-        // );
-
         cy.addBook('Идиот', 'Достоевский Ф.М.', '1');
         cy.contains('Идиот').should('be.visible');
     });
@@ -33,7 +28,8 @@ describe('add books', () => {
 
         cy.get('.card-title', { timeout: 10000 })
             .should('be.visible')
-            .and('contain', 'Герой нашего времени');
+            .and('contain', 'Герой нашего времени')
+            .and('contain', 'Евгений Онегин');
     });
 
     it('Should add one of the two books successfully (using button "cancel")', () => {
